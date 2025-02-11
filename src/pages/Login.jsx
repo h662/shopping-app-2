@@ -1,22 +1,29 @@
-import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { useNavigate, useLocation } from "react-router-dom";
+
 import { login } from "../store/slices/userSlice";
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const { isLoggedIn, userInfo } = useSelector((state) => state.user);
-
   const dispatch = useDispatch();
+
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const handleLogin = (e) => {
     e.preventDefault();
 
-    dispatch(login({ email, name: "John Doe" }));
-  };
+    if (!email || !password) return;
 
-  useEffect(() => console.log(isLoggedIn, userInfo), [isLoggedIn, userInfo]);
+    dispatch(login({ email, name: "John Doe" }));
+
+    const from = location.state?.from || "/";
+
+    navigate(from);
+  };
 
   return (
     <div className="container">

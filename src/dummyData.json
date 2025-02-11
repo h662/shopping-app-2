@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "image": "1.jpg",
+    "name": "Wireless Earbuds",
+    "price": 99,
+    "description": "High-quality sound."
+  },
+  {
+    "id": 2,
+    "image": "2.jpeg",
+    "name": "Smart Fitness Watch",
+    "price": 149,
+    "description": "Track your fitness goals."
+  },
+  {
+    "id": 3,
+    "image": "3.jpeg",
+    "name": "Bluetooth Speaker",
+    "price": 89,
+    "description": "Portable and powerful."
+  },
+  {
+    "id": 4,
+    "image": "4.jpeg",
+    "name": "Gaming Mouse",
+    "price": 59,
+    "description": "Precision and comfort."
+  }
+]
