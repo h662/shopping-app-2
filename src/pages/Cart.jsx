@@ -1,9 +1,16 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import ItemCard from "../components/ItemCard";
 import CheckoutButton from "../components/CheckoutButton";
+import { clearCart } from "../store/slices/cartSlice";
 
 function Cart() {
   const { items, totalAmount } = useSelector((state) => state.cart);
+
+  const dispatch = useDispatch();
+
+  const handleClearCart = () => {
+    dispatch(clearCart());
+  };
 
   return (
     <div className="container">
@@ -28,8 +35,17 @@ function Cart() {
         <h2 className="text-xl font-bold w-full">
           Total: $ {totalAmount.toFixed(2)}
         </h2>
-        <div>
+        <div className="flex gap-4">
           <CheckoutButton text="Checkout" />
+          <button
+            className={`button-style text-center  ${
+              totalAmount ? "bg-red-500" : "bg-red-100 cursor-not-allowed"
+            }`}
+            onClick={handleClearCart}
+            disabled={!totalAmount}
+          >
+            Clear
+          </button>
         </div>
       </div>
     </div>
