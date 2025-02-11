@@ -1,1 +1,23 @@
 @import "tailwindcss";
+
+@layer components {
+  .container {
+    @apply p-6 mx-auto;
+  }
+
+  .page-title {
+    @apply text-2xl font-bold mb-4;
+  }
+
+  .label-style {
+    @apply block mb-2;
+  }
+
+  .input-style {
+    @apply w-full border px-4 py-2 rounded;
+  }
+
+  .button-style {
+    @apply w-full px-6 py-2 bg-blue-500 text-white rounded;
+  }
+}

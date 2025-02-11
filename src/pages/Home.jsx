@@ -1,6 +1,6 @@
 function Home() {
   return (
-    <div className="p-6">
+    <div className="container">
       <section className="mb-8">
         <img
           src="/assets/banner.jpg"
