@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import dummyProducts from "../dummyData.json";
 import AddToCartButton from "../components/AddToCartButton";
+import CheckoutButton from "../components/CheckoutButton";
 
 function ProductDetail() {
   const { id } = useParams();
@@ -25,7 +26,7 @@ function ProductDetail() {
           <p className="text-gray-700">{product.description}</p>
           <p className="text-lg font-bold text-blue-500">$ {product.price}</p>
           <div className="flex gap-4">
-            <button className="button-style bg-green-500">Buy Now</button>
+            <CheckoutButton text="Buy Now" />
             <AddToCartButton product={product} />
           </div>
         </div>
